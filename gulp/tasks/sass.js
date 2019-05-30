@@ -14,6 +14,6 @@ module.exports = () => {
       .pipe($.gp.if(!$.dev, $.gp.csso()))
       .pipe($.gp.if(!$.dev, $.gp.rename({ suffix: '.min' })))
       .pipe($.gulp.dest(`${$.config.root}/assets/css`))
-      .pipe($.browserSync.stream());
+      .pipe($.browserSync.stream({match: '**/*.css'}))
   });
 };
